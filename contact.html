@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Tessa Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tessa's portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-layout">
+    <div class="sidebar-title">
+      <h2>Get In<br><em>Touch.</em></h2>
+    </div>
+
+    <div class="main-content">
+      <form id="contactForm" class="contact-form" style="background: none; padding: 0; max-width: 100%;">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Your Name">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="text" id="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="text" id="phone" placeholder="Digits only (e.g. 08012345678)">
+        </div>
+        <div class="field">
+          <label>Message</label>
+          <textarea id="message" rows="4" placeholder="How can I help you?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+        <p id="result" class="result-msg"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <h1>Tessa's portfolio</h1>
+    <p>© 2025 Tessa Adepeju Ademola. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const result = document.getElementById("result");
+
+      if (name === "" || email === "" || phone === "" || message === "") {
+        result.textContent = "Error: All fields are required.";
+        result.style.color = "red";
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        result.textContent = "Error: Invalid email format.";
+        result.style.color = "red";
+        return;
+      }
+      if (!/^\d+$/.test(phone)) {
+        result.textContent = "Error: Phone must contain only digits.";
+        result.style.color = "red";
+        return;
+      }
+      result.textContent = "Success! Thank you, " + name + ". I'll be in touch.";
+      result.style.color = "green";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,799 @@
+/* ==========================================
+   MODERN LAVENDER & BLACK DESIGN SYSTEM
+   ========================================== */
+:root {
+  --bg:        #faf8fb; /* Off-white background */
+  --text:      #0f0f11; /* Deep black text */
+  --lavender:  #d8cce6; /* Soft purple */
+  --lavender-dark: #bbaad6;
+  --card-bg:   #ffffff;
+  
+  --font-sans: 'Jost', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* --- HEADER & NAVIGATION (Top Bar) --- */
+header {
+  background-color: var(--bg);
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e0e8;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header h1::before {
+  content: "✽";
+  color: var(--lavender-dark);
+  margin-right: 8px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--lavender-dark); }
+
+/* --- PAGE HEADERS (For inner pages) --- */
+.page-header {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: var(--bg);
+}
+
+.page-header h2 {
+  font-family: var(--font-sans);
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.page-header h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--lavender-dark);
+  text-transform: lowercase;
+  font-size: 4.5rem;
+}
+
+/* --- MAIN CONTENT AREA --- */
+main {
+  padding: 40px 40px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- HOME PAGE HERO LAYOUT --- */
+.hero-split {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 0;
+}
+
+.hero-text { flex: 1; }
+.hero-text h2 {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.hero-text h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--lavender-dark);
+  text-transform: lowercase;
+  font-size: 5rem;
+  display: block;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  max-width: 450px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 200px 200px 0 0; /* The arched window effect */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover { background-color: var(--lavender-dark); color: var(--text); }
+
+/* --- CARDS (For Projects & Education) --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: var(--lavender);
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.card p { color: var(--text); font-size: 0.95rem; }
+
+/* --- EDUCATION TABLE --- */
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.edu-table th {
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.edu-table td {
+  padding: 20px;
+  border-bottom: 1px solid #d8cce6;
+  font-size: 1rem;
+}
+
+/* --- PLANNER PAGE --- */
+.planner-box {
+  display: flex;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.planner-box input {
+  flex: 1;
+  padding: 18px 20px;
+  border: 2px solid var(--text);
+  background-color: transparent;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+}
+
+.planner-box input:focus { border-color: var(--lavender-dark); }
+
+.planner-box button {
+  padding: 0 40px;
+  background-color: var(--text);
+  color: var(--bg);
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.planner-box button:hover { background-color: var(--lavender-dark); color: var(--text); }
+
+.task-list { list-style: none; max-width: 700px; margin: 0 auto; }
+
+.task-item {
+  background-color: var(--lavender);
+  padding: 18px 25px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.task-item.done span { text-decoration: line-through; opacity: 0.5; }
+
+.btn-done, .btn-del {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* --- CONTACT PAGE --- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--lavender);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.field { margin-bottom: 25px; text-align: left; }
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.field input, .field textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--text);
+  color: var(--bg);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-submit:hover { background-color: var(--lavender-dark); color: var(--text); }
+
+.result-msg { text-align: center; margin-top: 20px; font-weight: 600; }
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--lavender);
+  color: var(--text);
+  padding: 50px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+footer h1::before {
+  content: "✽";
+  margin-right: 8px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- MOBILE RESPONSIVENESS (Required) --- */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 20px; padding: 20px; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+  
+  .hero-split { flex-direction: column-reverse; text-align: center; gap: 30px; }
+  .hero-text h2 { font-size: 3rem; }
+  .hero-text h2 em { font-size: 3.5rem; }
+  .hero-text p { margin: 0 auto 20px; }
+  
+  .page-header h2 { font-size: 2.5rem; }
+  .page-header h2 em { font-size: 3rem; }
+  
+  .planner-box { flex-direction: column; }
+  .planner-box button { padding: 18px; }
+  
+  footer { flex-direction: column; gap: 15px; text-align: center; }
+}/* ---------- BUSINESS & CLASSY ABOUT PAGE ---------- */
+.about-layout {
+  display: flex;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  align-items: flex-start;
+}
+
+/* Left side image */
+.about-image-container {
+  flex: 1;
+  position: sticky;
+  top: 120px; /* Keeps image in view while scrolling text */
+}
+
+.about-image-container img {
+  width: 100%;
+  border-radius: 200px 200px 0 0; /* Matches the homepage arch */
+  display: block;
+  filter: grayscale(20%); /* Gives it a subtle, high-end editorial look */
+}
+
+/* Right side text */
+.about-content {
+  flex: 1.2;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+}
+
+.about-content h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  text-transform: lowercase;
+  color: var(--lavender-dark);
+  font-size: 4rem;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  border-left: 3px solid var(--lavender-dark);
+  padding-left: 20px;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.detail-block h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.detail-block p, .skills-list {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.skills-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for skills */
+  gap: 10px;
+}
+
+.skills-list li::before {
+  content: "✽";
+  color: var(--lavender-dark);
+  margin-right: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .about-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .about-image-container {
+    position: static;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-content h2 { font-size: 2.5rem; }
+  .about-content h2 em { font-size: 3rem; }
+  
+  .skills-list {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}/* ---------- BUSINESS LAYOUT FOR ALL PAGES ---------- */
+.page-layout {
+  display: flex;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  align-items: flex-start;
+}
+
+.sidebar-title {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+}
+
+.sidebar-title h2 {
+  font-size: 4rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.sidebar-title h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  text-transform: lowercase;
+  color: var(--lavender-dark);
+  font-size: 5rem;
+  display: block;
+  margin-top: 5px;
+}
+
+.main-content {
+  flex: 1.2;
+}
+
+/* Minimalist Project Cards */
+.project-item {
+  border-bottom: 1px solid #ddd;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.3s;
+}
+
+.project-item:hover {
+  padding-left: 10px;
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.project-item p {
+  color: #666;
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+.project-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--text);
+}
+
+/* Table Styling */
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.edu-table th {
+  text-align: left;
+  padding: 15px 10px;
+  border-bottom: 2px solid var(--text);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.edu-table td {
+  padding: 20px 10px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+  .page-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .sidebar-title {
+    position: static;
+  }
+  .sidebar-title h2 { font-size: 3rem; }
+  .sidebar-title h2 em { font-size: 3.5rem; }
+}
+/* ---------- CUTE HOMEPAGE ANIMATIONS ---------- */
+
+/* 1. Fade Up for the Text */
+.hero-text h2 {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-text p {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.3s forwards; /* 0.3s delay */
+}
+
+.hero-text .btn-primary {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.6s forwards; /* 0.6s delay */
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Floating Animation for the Arch Image */
+.hero-image img {
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); } /* floats up by 15px */
+  100% { transform: translateY(0px); }
+}
+/* ---------- CUTE HOMEPAGE ANIMATIONS ---------- */
+
+/* 1. Fade Up for the Text */
+.hero-text h2 {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-text p {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.3s forwards; /* 0.3s delay */
+}
+
+.hero-text .btn-primary {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.6s forwards; /* 0.6s delay */
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Floating Animation for the Arch Image */
+.hero-image img {
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); } /* floats up by 15px */
+  100% { transform: translateY(0px); }
+}
+/* ---------- FLOATING SPARKLES ---------- */
+.sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* stops them from blocking your clicks */
+  z-index: 999;
+}
+
+.sparkles span {
+  position: absolute;
+  color: var(--lavender-dark);
+  opacity: 0.4;
+  font-size: 1.5rem;
+  animation: floatAndFade 8s linear infinite;
+}
+
+/* Stagger their positions and animations so they don't move in sync */
+.sparkles span:nth-child(1) { left: 10%; top: 110%; animation-duration: 9s; font-size: 2rem; }
+.sparkles span:nth-child(2) { left: 30%; top: 110%; animation-duration: 12s; animation-delay: 2s; }
+.sparkles span:nth-child(3) { left: 50%; top: 110%; animation-duration: 7s; animation-delay: 4s; font-size: 1.2rem; }
+.sparkles span:nth-child(4) { left: 70%; top: 110%; animation-duration: 10s; animation-delay: 1s; font-size: 2.5rem; }
+.sparkles span:nth-child(5) { left: 85%; top: 110%; animation-duration: 11s; animation-delay: 5s; }
+.sparkles span:nth-child(6) { left: 95%; top: 110%; animation-duration: 8s; animation-delay: 3s; font-size: 1.8rem; }
+
+@keyframes floatAndFade {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg); /* Floats to top and spins */
+    opacity: 0;
+  }
+}
+
+/* ---------- NAVIGATION SPARKLE HOVER ---------- */
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adds a tiny sparkle next to the link when you hover */
+nav a::after {
+  content: "✦";
+  color: var(--lavender-dark);
+  font-size: 0.7rem;
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+nav a:hover::after {
+  transform: translateY(-50%) scale(1.5);
+}
+/* ---------- VIDEO SECTION ---------- */
+.video-section {
+  margin-top: 40px;
+}
+
+.video-container {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  border: 2px solid var(--lavender);
+  background-color: var(--text); /* Black background while loading */
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+/* ---------- SINGLE PROJECT PAGE ---------- */
+.single-project {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.single-project h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.single-project .project-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--lavender-dark);
+  margin-bottom: 40px;
+}
+
+.project-image-large {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.project-writeup {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background-color: var(--lavender-dark);
+  color: var(--text);
+}
